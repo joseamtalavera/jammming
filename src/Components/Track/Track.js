@@ -12,7 +12,7 @@ class Track extends React.Component {
         if(this.propsisRemoval) {
             return <button className='Track-action'>-</button>
         } else {
-            return <button className='Track-action'>+</button>
+            return <button className='Track-action' onClick={this.addTrack} >+</button>
         }
     }
 
