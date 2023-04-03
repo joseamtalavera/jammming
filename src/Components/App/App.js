@@ -13,7 +13,8 @@ class App extends React.Component {
     this.state = {
       searchResults: [],
       playlistName: 'My Playlist',
-      playlistTracks: []
+      playlistTracks: [],
+      isSaving: false // added
     };
 
     this.addTrack = this.addTrack.bind(this);
@@ -47,11 +48,14 @@ class App extends React.Component {
   }
 
   savePlaylist() {
+    console.log('Saving playlist...') // added to check loading-screen
     const trackUris = this.state.playlistTracks.map(track => track.uri);
+    this.setState({isSaving: true}) // added
     Spotify.savePlayList(this.state.playlistName, trackUris).then(() => {
       this.setState({
         playlistName: 'New Playlist',
-        playlistTracks: []
+        playlistTracks: [],
+        isSaving: false // added
       })
     })
   }
@@ -87,6 +91,13 @@ class App extends React.Component {
       onSave={this.savePlaylist} 
       />
     </div>
+    {this.state.isSaving && (
+          <div className="loading-screen">
+            <div className="loader-container">
+              <div className="loader"></div>
+            </div>
+          </div>
+        )}
   </div>
 </div>
   );

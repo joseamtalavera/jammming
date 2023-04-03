@@ -2,11 +2,14 @@
 
 
 const clientId = '979e7809e80d43e0ad511ae8a046f662';
-const redirectUri = 'http://bemusicapp.surge.sh';
+const redirectUri = 'http://localhost:3000/'
+
+;
 
 let accessToken;
 
 const Spotify = {
+    
     getAccessToken() {
         if(accessToken){
             return accessToken;

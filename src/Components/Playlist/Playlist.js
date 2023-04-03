@@ -30,7 +30,7 @@ class Playlist extends React.Component {
                 onClick={this.props.onSave} 
                 >SAVE TO SPOTIFY</button>
             </div>
-        );
+        ); 
     }
 }
 
