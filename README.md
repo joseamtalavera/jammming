@@ -2,7 +2,7 @@
 
 This project, Jammming, is a React web application that allows users to search the Spotify library, create a custom playlist, and save it to their Spotify account.
 
-![Jammming Preview](./jammming-preview.png)
+![Jammming Preview](http://bemusicapp.surge.sh/)
 
 ## Project Requirements
 
